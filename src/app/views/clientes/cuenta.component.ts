@@ -73,4 +73,11 @@ export class CuentaComponent implements OnInit {
             })
         }
     }
+
+    public getCuentaDetail(event:any){
+        if(event){
+            this.cuentaSelected = event;
+            this.cuenta_id
+        }
+    }
 }
