@@ -10,6 +10,8 @@ import {Dashboard5Component} from "./views/dashboards/dashboard5.component";
 import {StarterViewComponent} from "./views/appviews/starterview.component";
 import {LoginComponent} from "./views/appviews/login.component";
 
+import {CargaMasivaDetalleComponent} from './views/carga-masiva/carga-masiva-detalle.component';
+
 import {BlankLayoutComponent} from "./components/common/layouts/blankLayout.component";
 import {BasicLayoutComponent} from "./components/common/layouts/basicLayout.component";
 import {TopNavigationLayoutComponent} from "./components/common/layouts/topNavigationlayout.component";
@@ -46,7 +48,13 @@ export const ROUTES:Routes = [
   {
     path: '', component: BlankLayoutComponent,
     children: [
-      { path: 'login/:returnUrl', component: LoginComponent },
+      { path: 'login', component: LoginComponent },
+    ]
+  },
+  {
+    path: 'carga-masiva', component: BasicLayoutComponent,
+    children: [
+      { path: '', component: CargaMasivaDetalleComponent}
     ]
   },
 
