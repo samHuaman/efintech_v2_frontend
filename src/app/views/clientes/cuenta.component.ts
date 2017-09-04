@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Input, Output } from '@angular/core';
 
-import { HttpRequestService } from '../../services/httprequest.service';
+import { HttpRequestService } from 'app/services/http-request.service';
 
 
 

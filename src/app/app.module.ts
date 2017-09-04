@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import {DashboardsModule} from "./views/dashboards/dashboards.module";
 import {AppviewsModule} from "./views/appviews/appviews.module";
 import {CargaMasivaModule} from './views/carga-masiva/carga-masiva.module';
-
+import {ClientesModule} from './views/clientes/clientes.module';
 // App modules/components
 import {LayoutsModule} from "./components/common/layouts/layouts.module";
 
@@ -31,7 +31,8 @@ import {BasicAuthGuard} from './auth/authguard-basic';
     LayoutsModule,
     AppviewsModule,
     CargaMasivaModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    ClientesModule
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},
