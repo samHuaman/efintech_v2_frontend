@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
+import {OnInit} from '@angular/core';
+
 import 'jquery-slimscroll';
 
 declare var jQuery:any;
@@ -9,9 +11,22 @@ declare var jQuery:any;
   templateUrl: 'navigation.template.html'
 })
 
-export class NavigationComponent {
+export class NavigationComponent implements OnInit {
 
-  constructor(private router: Router) {}
+  Username: string;
+
+  constructor(private router: Router) {
+
+  }
+
+  ngOnInit() {
+    let currentUser = localStorage.getItem('currentUser');
+    
+    if (currentUser) {
+      this.Username = JSON.parse(currentUser).name;
+      this.Username = this.Username.toUpperCase();
+    }
+  }
 
   ngAfterViewInit() {
     jQuery('#side-menu').metisMenu();

@@ -14,9 +14,9 @@ export class BasicAuthGuard implements CanActivate {
             return true;
         }
 
-        let returnUrl = route.url[0].path;
+        /* let returnUrl = route.url[0].path; */
 
-        this.router.navigate(['/login', returnUrl]);
+        this.router.navigate(['/login']);
         return false;
     }
 }

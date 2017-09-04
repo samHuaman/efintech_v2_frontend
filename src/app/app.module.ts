@@ -11,10 +11,12 @@ import { AppComponent } from './app.component';
 // App views
 import {DashboardsModule} from "./views/dashboards/dashboards.module";
 import {AppviewsModule} from "./views/appviews/appviews.module";
+import {CargaMasivaModule} from './views/carga-masiva/carga-masiva.module';
 
 // App modules/components
 import {LayoutsModule} from "./components/common/layouts/layouts.module";
 
+import {HttpRequestService} from './services/http-request.service';
 import {BasicAuthGuard} from './auth/authguard-basic';
 
 @NgModule({
@@ -28,11 +30,13 @@ import {BasicAuthGuard} from './auth/authguard-basic';
     DashboardsModule,
     LayoutsModule,
     AppviewsModule,
+    CargaMasivaModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},
-    BasicAuthGuard
+    BasicAuthGuard,
+    HttpRequestService
   ],
   bootstrap: [AppComponent]
 })

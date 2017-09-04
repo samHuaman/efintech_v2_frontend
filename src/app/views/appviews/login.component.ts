@@ -33,17 +33,17 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    let returnUrl: string;
+    /* let returnUrl: string;
     
     this.sub = this.activatedRoute.params.subscribe(params => {
       returnUrl = params['returnUrl'];
-    });
+    }); */
 
     if (currentUser) {
-      if (returnUrl || returnUrl != '') {
+      /* if (returnUrl || returnUrl != '') {
         this.router.navigate([returnUrl]);
-      }
-      else this.router.navigate(['/']);
+      } */
+      this.router.navigate(['/']);
     }
   }
 
