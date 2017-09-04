@@ -1,10 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { Input, Output } from '@angular/core';
-<<<<<<< HEAD
+
 import { HttpRequestService } from '../../services/httprequest.service';
-=======
-import { HttpRequestService } from '../../services/http-request.service';
->>>>>>> b75c6ea018bf2c980c9eac50ae5938c8facae60f
+
+
 
 @Component({
     selector: 'cuenta',
@@ -23,11 +22,8 @@ export class CuentaComponent implements OnInit {
     public cuenta_id:any;
     public cuentaDetail: any = {};
 
-<<<<<<< HEAD
+
     constructor(private httpRequestService: HttpRequestService){
-=======
-    constructor(private http: HttpRequestService) {
->>>>>>> b75c6ea018bf2c980c9eac50ae5938c8facae60f
 
     }
 
@@ -80,7 +76,7 @@ export class CuentaComponent implements OnInit {
     getCuentaByCuentaId(){
         this.cuentaDetailURL = 'http://localhost:8080/cuentas/getCuentaByCuentaId?cuenta_id=' + this.cuenta_id;
         if(this.cuenta_id > 0 && this.cuenta_id != null){
-            this.http.getWithCredentials(this.cuentaDetailURL)
+            this.httpRequestService.getWithCredentials(this.cuentaDetailURL)
             .subscribe(
                 data => {
                     this.cuentaDetail = JSON.parse(data._body);
