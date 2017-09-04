@@ -15,6 +15,8 @@ import {AppviewsModule} from "./views/appviews/appviews.module";
 // App modules/components
 import {LayoutsModule} from "./components/common/layouts/layouts.module";
 
+import {BasicAuthGuard} from './auth/authguard-basic';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -28,7 +30,10 @@ import {LayoutsModule} from "./components/common/layouts/layouts.module";
     AppviewsModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
+    BasicAuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
