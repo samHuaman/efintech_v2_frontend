@@ -14,6 +14,10 @@ export class CuentaComponent implements OnInit {
     public cuentaColumns:any[] = [];
     public cuentaSelected:any;
 
+    public cuentaDetailURL:string;
+    public cuenta_id:any;
+    public cuentaDetail: any = {};
+
     ngOnInit(){
 
     }
@@ -58,5 +62,15 @@ export class CuentaComponent implements OnInit {
                 responsivePriority: 5
             },
         ]
+    }
+
+    getCuentaByCuentaId(){
+        this.cuentaDetailURL = 'http://localhost:8080/cuentas/getCuentaByCuentaId?cuenta_id=' + this.cuenta_id;
+        if(this.cuenta_id > 0 && this.cuenta_id != null){
+            this.httpRequestService.getWithCredentials(this.cuentaDetailURL)
+            .susbcribe(data=>{
+                this.cuentaDetail = JSON.parse(data._body);
+            })
+        }
     }
 }
