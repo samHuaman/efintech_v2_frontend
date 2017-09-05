@@ -2,6 +2,7 @@ import { Component, OnInit, OnChanges } from "@angular/core";
 import { HttpRequestService } from 'app/services/http-request.service';
 import { FormGroup } from '@angular/forms';
 import { Input, Output } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router'
 
 @Component({
     selector: 'cliente-detalle',
