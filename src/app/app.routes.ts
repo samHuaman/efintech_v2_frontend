@@ -11,7 +11,11 @@ import {StarterViewComponent} from "./views/appviews/starterview.component";
 import {LoginComponent} from "./views/appviews/login.component";
 
 import {CargaMasivaDetalleComponent} from './views/carga-masiva/carga-masiva-detalle.component';
+<<<<<<< HEAD
 import {SolicitudesComponent} from './views/solicitudes/solicitud.component';
+=======
+import {ClienteComponent} from './views/clientes/cliente.component';
+>>>>>>> b0b5d591da35dde8fe734920c6df51f7a8db845a
 
 import {BlankLayoutComponent} from "./components/common/layouts/blankLayout.component";
 import {BasicLayoutComponent} from "./components/common/layouts/basicLayout.component";
@@ -62,6 +66,12 @@ export const ROUTES:Routes = [
     path: 'solicitudes', component: BasicLayoutComponent,
     children: [
       { path: '', component: SolicitudesComponent }
+    ]
+  },
+  {
+    path: 'cliente', component: BasicLayoutComponent,
+    children: [
+      { path: '', component: ClienteComponent}
     ]
   },
 
