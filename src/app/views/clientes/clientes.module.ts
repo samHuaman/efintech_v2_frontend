@@ -3,6 +3,9 @@ import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from '@angular/forms'
 import { Select2Module } from 'ng2-select2';
 import { RouterModule } from '@angular/router';
+import { MyDataTablesModule } from '../../components/common/datatables/datatables.module';
+import { MyDropdownModule } from '../../components/common/dropdowns/dropdowns.module';
+import { IboxtoolsModule } from '../../components/common/iboxtools/iboxtools.module';
 
 import { CuentaComponent } from './cuenta.component';
 import { ClienteComponent } from './cliente.component';
@@ -18,7 +21,10 @@ import {ClienteDetalleComponent } from './cliente-detalle.component';
         BrowserModule,
         FormsModule,
         Select2Module,
-        RouterModule
+        RouterModule,
+        MyDataTablesModule,
+        MyDropdownModule,
+        IboxtoolsModule
         
     ],
     exports: [
