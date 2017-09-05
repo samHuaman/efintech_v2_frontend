@@ -3,7 +3,6 @@
     <ul class="nav metismenu" id="side-menu">
       <li class="nav-header">
         <div class="profile-element" dropdown>
-          <!-- <img alt="image" class="img-circle" src="assets/images/profile_small.jpg"> -->
           <a dropdownToggle>
             <span class="block m-t-xs">
               <strong class="font-bold">{{Username}}</strong>
@@ -16,23 +15,52 @@
         </div>
       </li>
       <li>
-        <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Cargar Archivos</span> <span class="fa arrow"></span> </a>
+        <a href="#">
+          <i class="fa fa-th-large"></i>
+          <span class="nav-label">Cargar Archivos</span>
+          <span class="fa arrow"></span>
+        </a>
         <ul class="nav nav-second-level collapse">
-          <li><a [routerLink]="['/carga-masiva']">Carga Masiva</a></li>
+          <li>
+            <a [routerLink] ="['/carga-masiva']">Carga Masiva</a>
+          </li>
         </ul>
       </li>
+
       <li>
-        <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Solicitud</span> <span class="fa arrow"></span> </a>
+        <a href="#">
+          <i class="fa fa-th-large"></i>
+          <span class="van-label">Solicitud</span>
+          <span class="fa arrow"></span>
+        </a>
         <ul class="nav nav-second-level collapse">
+<<<<<<< HEAD
           <li><a [routerLink]="['/solicitudes']">Solicitudes</a></li>      
         </ul>    
+=======
+          <li>
+            <a [routerLink]="['/solicitudes']">Solicitudes</a>
+          </li>
+        </ul>
+>>>>>>> adf615cd529d82ad541d2e966ac9e7dce7a87e0a
       </li>
+
       <li>
+<<<<<<< HEAD
         <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Clientes</span> <span class="fa arrow"></span> </a>
+=======
+        <a href="#">
+          <i class="fa fa-th-large"></i>
+          <span class="van-label">Cliente</span>
+        </a>
+>>>>>>> adf615cd529d82ad541d2e966ac9e7dce7a87e0a
         <ul class="nav nav-second-level collapse">
-          <li><a [routerLink]="['/cliente']">Buscar Cliente</a></li>
+          <li>
+            <a [routerLink]="['/cliente']">Buscar Cliente</a>
+          </li>
         </ul>
       </li>
       </ul>
+    </ul>
   </div>
 </nav>
