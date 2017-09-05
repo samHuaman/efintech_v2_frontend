@@ -44,12 +44,14 @@
 // Custom style
 // Your custom style to override base style
 @import "imports/custom";
+@import "node_modules/ladda/css/ladda";
 
 // Clear layout on print mode
 @media print {
   nav.navbar-static-side {
     display: none;
   }
+  
   body { overflow: visible !important; }
 
   #page-wrapper {

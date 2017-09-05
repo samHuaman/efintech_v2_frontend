@@ -72,7 +72,7 @@ export class CargaMasivaDetalleComponent implements OnInit {
                     
                     _data.forEach(obj => {
                         let _obj = {
-                            id: obj.nombreNormalizado,
+                            id: obj.tipoArchivoId,
                             text: obj.nombre
                         };
 
@@ -114,8 +114,8 @@ export class CargaMasivaDetalleComponent implements OnInit {
                 timeout: 10000
             });
 
-            this._http.postFileWithCredentials('http://localhost:8080/massive-charge/postFile',
-                    ['type_alias', this.TipoArchivoSelected], this.file)
+            this._http.postFileWithCredentials('http://localhost:8080/carga-masiva/saveFile',
+                    ['tipo_archivo', this.TipoArchivoSelected], this.file)
                 .subscribe(
                     data => {
                         let res = JSON.parse(data);
