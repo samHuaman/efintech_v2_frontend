@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import {DashboardsModule} from "./views/dashboards/dashboards.module";
 import {AppviewsModule} from "./views/appviews/appviews.module";
 import {CargaMasivaModule} from './views/carga-masiva/carga-masiva.module';
+import {SolicitudesModule} from './views/solicitudes/solicitudes.module';
 
 // App modules/components
 import {LayoutsModule} from "./components/common/layouts/layouts.module";
@@ -31,6 +32,7 @@ import {BasicAuthGuard} from './auth/authguard-basic';
     LayoutsModule,
     AppviewsModule,
     CargaMasivaModule,
+    SolicitudesModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [
