@@ -12,12 +12,9 @@ import { AppComponent } from './app.component';
 import {DashboardsModule} from "./views/dashboards/dashboards.module";
 import {AppviewsModule} from "./views/appviews/appviews.module";
 import {CargaMasivaModule} from './views/carga-masiva/carga-masiva.module';
-<<<<<<< HEAD
 import {SolicitudesModule} from './views/solicitudes/solicitudes.module';
 
-=======
 import {ClientesModule} from './views/clientes/clientes.module';
->>>>>>> b0b5d591da35dde8fe734920c6df51f7a8db845a
 // App modules/components
 import {LayoutsModule} from "./components/common/layouts/layouts.module";
 
