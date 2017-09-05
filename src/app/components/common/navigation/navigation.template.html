@@ -3,11 +3,10 @@
     <ul class="nav metismenu" id="side-menu">
       <li class="nav-header">
         <div class="profile-element" dropdown>
-          <!-- <img alt="image" class="img-circle" src="assets/images/profile_small.jpg"> -->
           <a dropdownToggle>
-            <span class="block m-t-xs"> 
-              <strong class="font-bold">{{Username}}</strong> 
-              <b class="caret"></b> 
+            <span class="block m-t-xs">
+              <strong class="font-bold">{{Username}}</strong>
+              <b class="caret"></b>
             </span>
           </a>
         </div>
@@ -16,33 +15,43 @@
         </div>
       </li>
       <li>
-        <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Cargar Archivos</span> <span class="fa arrow"></span> </a>
+        <a href="#">
+          <i class="fa fa-th-large"></i>
+          <span class="nav-label">Cargar Archivos</span>
+          <span class="fa arrow"></span>
+        </a>
         <ul class="nav nav-second-level collapse">
-          <li><a [routerLink]="['/carga-masiva']">Carga Masiva</a></li>
+          <li>
+            <a [routerLink] ="['/carga-masiva']">Carga Masiva</a>
+          </li>
         </ul>
       </li>
-      <li>
-        <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Solicitud</span> <span class="fa arrow"></span> </a>
-        <ul class="nav nav-second-level collapse">
-          <li><a [routerLink]="['/solicitudes']">Solicitudes</a></li>
-<<<<<<< HEAD
-          <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Clientes</span> <span class="fa arrow"></span> </a>
-          <ul class="nav nav-second-level collapse">
-            <li><a [routerLink]="['/cliente']">Buscar Cliente</a></li>
-          </ul>
-      </li>
-      </ul>
-=======
-        </ul>
-      </li>
-      <li>
-        <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Cliente</span> <span class="fa arrow"></span> </a>
-        <ul class="nav nav-second-level collapse">
-          <li><a [routerLink]="['/cliente']">Buscar Cliente</a></li>
-        </ul>
-      </li>      
-    </ul>
 
->>>>>>> 05a5c289faacdfb2f424ce0053a22075f1e031c2
+      <li>
+        <a href="#">
+          <i class="fa fa-th-large"></i>
+          <span class="van-label">Solicitud</span>
+          <span class="fa arrow"></span>
+        </a>
+        <ul class="nav nav-second-level collapse">
+          <li>
+            <a [routerLink]="['/solicitudes']">Solicitudes</a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class="fa fa-th-large"></i>
+          <span class="van-label">Cliente</span>
+          <span class="fa arrow"></span>
+        </a>
+        <ul class="nav nav-second-level collapse">
+          <li>
+            <a [routerLink]="['/cliente']">Buscar Cliente</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </nav>
