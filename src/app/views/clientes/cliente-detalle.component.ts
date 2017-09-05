@@ -12,9 +12,12 @@ import { Router, ActivatedRoute } from '@angular/router'
 export class ClienteDetalleComponent implements OnInit{
 
     @Input() Persona:any={};
+    documento:string;
+    fullName:string;
 
     ngOnInit(){
-        console.log(this.Persona);
+        this.documento = this.Persona.numeroDocumentoIdentidad;
+        this.fullName = this.Persona.primerNombre + ' ' + this.Persona.segundoNombre + ' ' + this.Persona.apellidoPaterno + ' ' + this.Persona.apellidoMaterno;
     }
     ngOnChanges(){
         console.log(this.Persona);
