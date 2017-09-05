@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, AfterViewInit, AfterViewChecked, ChangeDetectorRef } from "@angular/core";
+import { Component, OnInit, OnChanges, AfterViewInit, AfterViewChecked, ChangeDetectorRef, EventEmitter } from "@angular/core";
 import { HttpRequestService } from 'app/services/http-request.service';
 import { FormGroup } from '@angular/forms';
 import { Select2OptionData } from 'ng2-select2';
@@ -11,11 +11,12 @@ import { Input, Output } from '@angular/core';
 
 export class ClienteComponent implements OnInit,OnChanges,AfterViewChecked{
 
-    @Output() clienteDocumento:string;
+    Persona:any={};
     public tipoDocumento:string;
+    public clienteDocumento: string;
     public clienteURL:string;
     public cliente:any={};
-    detalle: boolean = false;
+    detalle: boolean = true;
 
     //TipoDocumento
     tipoD: Array<Select2OptionData> = [];
@@ -35,7 +36,8 @@ export class ClienteComponent implements OnInit,OnChanges,AfterViewChecked{
             this.httpRequestService.getWithCredentials(this.clienteURL)
             .subscribe(data =>{
                 if(data._body.toString().length>0){
-                   this.cliente = JSON.parse(data._body);
+                   this.Persona = JSON.parse(data._body);
+                   this.detalle=true;
                 }else{
                     console.log('No hay información');
                 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnChanges } from "@angular/core";
 import { HttpRequestService } from 'app/services/http-request.service';
 import { FormGroup } from '@angular/forms';
 import { Input, Output } from '@angular/core';
@@ -10,9 +10,12 @@ import { Input, Output } from '@angular/core';
 
 export class ClienteDetalleComponent implements OnInit{
 
-    @Input() clienteDocumento:any;
+    @Input() Persona:any={};
 
     ngOnInit(){
-        console.log(this.clienteDocumento);
+        console.log(this.Persona);
+    }
+    ngOnChanges(){
+        console.log(this.Persona);
     }
 }
