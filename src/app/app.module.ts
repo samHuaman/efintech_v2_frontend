@@ -13,13 +13,8 @@ import {DashboardsModule} from "./views/dashboards/dashboards.module";
 import {AppviewsModule} from "./views/appviews/appviews.module";
 import {CargaMasivaModule} from './views/carga-masiva/carga-masiva.module';
 import {SolicitudesModule} from './views/solicitudes/solicitudes.module';
-<<<<<<< HEAD
 import {ClientesModule} from './views/clientes/clientes.module';
 
-=======
-
-import {ClientesModule} from './views/clientes/clientes.module';
->>>>>>> 07355c038830cda349ffb3f415536bed32c4a459
 // App modules/components
 import {LayoutsModule} from "./components/common/layouts/layouts.module";
 
