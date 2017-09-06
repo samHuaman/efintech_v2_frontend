@@ -7,15 +7,15 @@ import { MyDataTablesModule } from '../../components/common/datatables/datatable
 import { MyDropdownModule } from '../../components/common/dropdowns/dropdowns.module';
 import { IboxtoolsModule } from '../../components/common/iboxtools/iboxtools.module';
 
-import { CuentaComponent } from './cuenta.component';
 import { ClienteComponent } from './cliente.component';
-import {ClienteDetalleComponent } from './cliente-detalle.component';
+import { ClienteDetalleComponent } from './cliente-detalle.component';
+import { CuentaDetalleComponent } from './cuenta-detalle.component';
 
 @NgModule({
     declarations: [
-        CuentaComponent,
         ClienteComponent,
-        ClienteDetalleComponent
+        ClienteDetalleComponent,
+        CuentaDetalleComponent
     ],
     imports: [
         BrowserModule,
@@ -28,9 +28,9 @@ import {ClienteDetalleComponent } from './cliente-detalle.component';
         
     ],
     exports: [
-        CuentaComponent,
         ClienteComponent,
-        ClienteDetalleComponent
+        ClienteDetalleComponent,
+        CuentaDetalleComponent
     ]
 })
 

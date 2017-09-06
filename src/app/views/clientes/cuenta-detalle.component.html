@@ -1,0 +1,197 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Detalle de Cuenta</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a (click)="detalle=false">Cuentas</a>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<!-- Cuerpo -->
+<div class="wrapper wrapper-content">
+    <div class="row">
+
+        <div class="col-lg-5">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <h3>DATOS PRINCIPALES</h3>
+                    <div class="ibox-content">
+                        <div class="form-group">
+                            <br>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 47px">Producto:</label>
+                            <label class="control-label">{{Cuenta.segmento.subProducto.producto.nombre}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 20px">Sub Producto:</label>
+                            <label class="control-label">{{Cuenta.segmento.subProducto.nombre}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 42px">Segmento:</label>
+                            <label class="control-label">{{Cuenta.segmento.nombre}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 22px">N° de Cuenta:</label>
+                            <label class="control-label">{{Cuenta.numeroCuenta}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 66px">Estado:</label>
+                            <label class="control-label">{{cuentaEstado}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 24px">Días de mora:</label>
+                            <label class="control-label">{{Cuenta.diasAtraso}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 20px">Fecha<br>formalización:</label>
+                            <label class="control-label">{{Cuenta.fechaAlta}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 58px">Moneda:</label>
+                            <label class="control-label">{{Moneda}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 58px">Tipo de<br>Moneda:</label>
+                            <label class="control-label">{{MonedaPS}}</label>
+                        </div>
+                        <div class="form-group">
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-7">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="form-inline">
+                        <div class="form-group" style="margin-right: 342px">
+                            <h3>DATOS DEL CREDITO</h3>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn-xs btn-primary">Ver cuotas</button>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="form-group" style="text-align:center; color: green">
+                            <h1><strong>S/. 50,000.00</strong></h1>
+                            <label>Deuda Total</label>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 47px">Periodicidad de pago:</label>
+                            <label class="control-label">{{Cuenta.segmento.subProducto.producto.nombre}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 20px">Número de cuota:</label>
+                            <label class="control-label">{{Cuenta.segmento.subProducto.nombre}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 42px">Día de pago:</label>
+                            <label class="control-label">{{Cuenta.segmento.nombre}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 22px">Duración total:</label>
+                            <label class="control-label">{{Cuenta.numeroCuenta}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 66px">Tasa interés moratorio:</label>
+                            <label class="control-label">{{cuentaEstado}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 24px">Tasa int. c. efectiva anual:</label>
+                            <label class="control-label">{{Cuenta.diasAtraso}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 20px">Tasa interés compensatorio:</label>
+                            <label class="control-label">{{Cuenta.fechaAlta}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 58px">Comisión de gastos:</label>
+                            <label class="control-label">{{Moneda}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 58px">Seguro desgravamen:</label>
+                            <label class="control-label">{{MonedaPS}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="form-inline">
+                        <div class="form-group" style="margin-right: 254px">
+                            <h3>SALDOS</h3>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn-xs btn-primary">Ver cuotas</button>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="form-group">
+                            <label>Cap. Adeudado Venc:</label>
+                        </div>
+                        <div class="form-group">
+                            <label>Cap. Adeudado No Venc:</label>
+                        </div>
+                        <div class="form-group">
+                            <label>Intereses vencidos:</label>
+                        </div>
+                        <div class="form-group">
+                            <label>Int. corridos no vencidos:</label>
+                        </div>
+                        <div class="form-group">
+                            <label>Int. corridos vencidos:</label>
+                        </div>
+                        <div class="form-group">
+                            <label>Penalidad<br>Incumplimiento pago:</label>
+                        </div>
+                        <div class="form-group">
+                            <label>Deuda seguros No Venc:</label>
+                        </div>
+                        <div class="form-group">
+                            <label>Subvención:</label>
+                        </div>
+                        <div class="form-group">
+                            <label>Comisión Liquidación:</label>
+                        </div>
+                        <div class="form-group">
+                            <label>Balance Cancelación Contable:</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-7">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="form-inline">
+                        <div class="form-group" style="margin-right: 411px">
+                            <h3>GARANTIAS</h3>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn-xs btn-primary">Ver cuotas</button>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-lg-7" style="position: relative">
+                                <mydatatables-ajax #dt [url]="url" [filter]="filter" [columns]="columns" (key)="onShowDropdown($event)">
+                                </mydatatables-ajax>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

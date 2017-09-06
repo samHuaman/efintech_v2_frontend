@@ -20,6 +20,8 @@ export class ClienteDetalleComponent implements OnInit{
     public filter: Object;
     cuentaSelected: any = {};
 
+    ShowDropdown: boolean = false;
+
     ngOnInit(){
         this.documento = this.Persona.numeroDocumentoIdentidad;
         this.fullName = this.Persona.primerNombre + ' ' + this.Persona.segundoNombre + ' ' + this.Persona.apellidoPaterno + ' ' + this.Persona.apellidoMaterno;
@@ -28,31 +30,33 @@ export class ClienteDetalleComponent implements OnInit{
         this.columns = [
             {
                 title: 'Nor Cuenta',
-                data: 'nrocuenta',
-                name: 'nrocuenta',
+                data: 'numeroCuenta',
+                name: 'numeroCuenta',
                 responsivePriority: 0
             },
             {
                 title: 'Tipo de Produto',
-                data: 'producto',
-                name: 'producto',
-                responsivePriority: 3
+                data: 'segmento.subProducto.producto.nombre',
+                name: 'segmento.subProducto.producto.nombre',
+                responsivePriority: 1
             },
             {
                 title: 'SubProducto',
-                data: '',
-                name: '',
-                responsivePriority: 4
+                data: 'segmento.subProducto.nombre',
+                name: 'segmento.subProducto.nombre',
+                responsivePriority: 2
             },
             {
                 title: 'Moneda',
-                data: '',
-                name: ''
+                data: 'segmento.subProducto.nombre',
+                name: 'segmento.subProducto.nombre',
+                responsivePriority: 3
             },
             {
                 title: 'Saldo',
-                data: '',
-                name: ''
+                data: 'segmento.subProducto.nombre',
+                name: 'segmento.subProducto.nombre',
+                responsivePriority: 4
             }
         ];
     }
@@ -60,15 +64,15 @@ export class ClienteDetalleComponent implements OnInit{
     onShowDropdown(event: any) {
         if (event) {
             this.cuentaSelected = event;
-            //this.ShowDropdown = true;
+            this.ShowDropdown = true;
         }
         else {
             this.cuentaSelected = { };
-            //this.ShowDropdown = false;
+            this.ShowDropdown = false;
         }
     }
 
     ngOnChanges(){
-        console.log(this.Persona);
+
     }
 }

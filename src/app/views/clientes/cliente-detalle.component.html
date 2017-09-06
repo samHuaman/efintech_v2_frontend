@@ -56,7 +56,7 @@
                                         <my-dropdown *ngIf="ShowDropdown==true">
                                             <ul class="dropdown-menu dropdown-menu-right dopdown-list">
                                                 <li>
-                                                    <a>Ver Detalle</a>
+                                                    <a [routerLink]="['./cuenta-detalle',cuentaSelected.cuentaId]">Ver Detalle</a>
                                                 </li>
                                             </ul>
                                         </my-dropdown>

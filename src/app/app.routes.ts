@@ -13,6 +13,7 @@ import {LoginComponent} from "./views/appviews/login.component";
 import {CargaMasivaDetalleComponent} from './views/carga-masiva/carga-masiva-detalle.component';
 import {SolicitudesComponent} from './views/solicitudes/solicitud.component';
 import {ClienteComponent} from './views/clientes/cliente.component';
+import { CuentaDetalleComponent } from './views/clientes/cuenta-detalle.component';
 
 import {BlankLayoutComponent} from "./components/common/layouts/blankLayout.component";
 import {BasicLayoutComponent} from "./components/common/layouts/basicLayout.component";
@@ -68,7 +69,8 @@ export const ROUTES:Routes = [
   {
     path: 'cliente', component: BasicLayoutComponent,
     children: [
-      { path: '', component: ClienteComponent}
+      {path: '',  component: ClienteComponent, canActivate: [BasicAuthGuard]},
+      {path: 'cuenta-detalle/:cuentaId',  component: CuentaDetalleComponent, canActivate: [BasicAuthGuard]}
     ]
   },
 
