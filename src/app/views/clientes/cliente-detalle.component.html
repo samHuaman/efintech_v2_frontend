@@ -3,7 +3,7 @@
         <h2>Detalle de Cliente</h2>
         <ol class="breadcrumb">
             <li>
-                <a (click)="detalle=false">Clientes</a>
+                <a>Clientes</a>
             </li>
         </ol>
     </div>
@@ -56,7 +56,7 @@
                                         <my-dropdown *ngIf="ShowDropdown==true">
                                             <ul class="dropdown-menu dropdown-menu-right dopdown-list">
                                                 <li>
-                                                    <a [routerLink]="['./cuenta-detalle',cuentaSelected.cuentaId]">Ver Detalle</a>
+                                                    <a [routerLink]="['../../cuenta-detalle',cuentaSelected.cuentaId, persona_id]">Ver Detalle</a>
                                                 </li>
                                             </ul>
                                         </my-dropdown>

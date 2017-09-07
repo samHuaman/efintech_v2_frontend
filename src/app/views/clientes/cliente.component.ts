@@ -27,65 +27,65 @@ export class ClienteComponent implements OnInit, OnChanges, AfterViewChecked {
         private changeRef: ChangeDetectorRef) { }
 
     ngOnInit() {
-        this.getTipoDData()
+        // this.getTipoDData()
     }
 
-    getCliente() {
-        this.PersonaURL = 'http://localhost:8080/personas/getPersonaByDocumento?tipoDocumento=' + this.tipoDocumento + '&documento=' + this.clienteDocumento;
-        if (this.clienteDocumento != null) {
-            this.httpRequestService.getWithCredentials(this.PersonaURL)
-                .subscribe(data => {
-                    let persona: any = {} = JSON.parse(data._body);
-                    this.cliente_id = persona.cliente.clienteId;
-                    let clienteURL = 'http://localhost:8080/personas/getClienteByClienteId?cliente_id=' + this.cliente_id;
-                    if (this.cliente_id != null) {
-                        this.httpRequestService.getWithCredentials(clienteURL)
-                            .subscribe(data => {
-                                if(data._body.toString()!=null){
-                                    this.Persona = persona;
-                                    this.detalle = true;
-                                }else{
-                                    console.log("No existe Cliente");
-                                }
-                            })
-                    }
-                })
-        }
-    }
+    // getCliente() {
+    //     this.PersonaURL = 'http://localhost:8080/personas/getPersonaByDocumento?tipoDocumento=' + this.tipoDocumento + '&documento=' + this.clienteDocumento;
+    //     if (this.clienteDocumento != null) {
+    //         this.httpRequestService.getWithCredentials(this.PersonaURL)
+    //             .subscribe(data => {
+    //                 let persona: any = {} = JSON.parse(data._body);
+    //                 this.cliente_id = persona.cliente.clienteId;
+    //                 let clienteURL = 'http://localhost:8080/personas/getClienteByClienteId?cliente_id=' + this.cliente_id;
+    //                 if (this.cliente_id != null) {
+    //                     this.httpRequestService.getWithCredentials(clienteURL)
+    //                         .subscribe(data => {
+    //                             if(data._body.toString()!=null){
+    //                                 this.Persona = persona;
+    //                                 this.detalle = true;
+    //                             }else{
+    //                                 console.log("No existe Cliente");
+    //                             }
+    //                         })
+    //                 }
+    //             })
+    //     }
+    // }
 
-    getTipoDData() {
-        this.tipoDOptions = {
-            dropdownAutoWidth: false,
-            width: '100%',
-            allowClear: false,
-            multiple: true,
-            placeholder: {
-                id: -1,
-                text: 'Tipo Documento'
-            }
-        };
+    // getTipoDData() {
+    //     this.tipoDOptions = {
+    //         dropdownAutoWidth: false,
+    //         width: '100%',
+    //         allowClear: false,
+    //         multiple: true,
+    //         placeholder: {
+    //             id: -1,
+    //             text: 'Tipo Documento'
+    //         }
+    //     };
 
-        let url: string = 'http://localhost:8080/tipoDocumento/getAllTipoDocumento'
-        this.httpRequestService.getWithCredentials(url)
-            .subscribe(
-            data => {
-                let _data = JSON.parse(data._body);
-                let array: any[] = [];
+    //     let url: string = 'http://localhost:8080/tipoDocumento/getAllTipoDocumento'
+    //     this.httpRequestService.getWithCredentials(url)
+    //         .subscribe(
+    //         data => {
+    //             let _data = JSON.parse(data._body);
+    //             let array: any[] = [];
 
-                _data.forEach(obj => {
-                    let _obj = {
-                        id: obj.tipoDocumentoIdentidadId,
-                        text: obj.nombre
-                    };
-                    array.push(_obj);
-                });
+    //             _data.forEach(obj => {
+    //                 let _obj = {
+    //                     id: obj.tipoDocumentoIdentidadId,
+    //                     text: obj.nombre
+    //                 };
+    //                 array.push(_obj);
+    //             });
 
-                this.tipoD = array;
-            },
-            error => console.log(error),
-            () => console.log('Request Finished')
-            );
-    }
+    //             this.tipoD = array;
+    //         },
+    //         error => console.log(error),
+    //         () => console.log('Request Finished')
+    //         );
+    // }
 
     onTipoDChange(event: any) {
         this.tipoSelected = event.value;

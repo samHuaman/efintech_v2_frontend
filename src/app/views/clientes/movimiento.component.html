@@ -1,0 +1,61 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-4">
+        <h2>Detalle Movimiento</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a [routerLink]="['/cliente/cliente-detalle',personaId]">Resumen Cliente</a>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 20px">Cliente:</label>
+                            <label class="control-label" style="margin-right: 80px"></label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 20px">Cuenta:</label>
+                            <label class="control-label" style="margin-right: 100px"></label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 20px">Saldo:</label>
+                            <label class="control-label" style="margin-right: 100px"></label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 20px">Moneda:</label>
+                            <label class="control-label" style="margin-right: 20px"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <h3>INGRESAR DATOS DE MOVIMIENTO</h3>
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 20px">Tipo de Movimiento:</label>
+                            <select2>
+                            </select2>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 20px">Fecha:</label>
+                            <input type="date">
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+</div>

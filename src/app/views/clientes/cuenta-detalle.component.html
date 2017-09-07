@@ -3,16 +3,62 @@
         <h2>Detalle de Cuenta</h2>
         <ol class="breadcrumb">
             <li>
+                <a [routerLink]="['/cliente/cliente-detalle',personaId]">Resumen Cliente</a>
+            </li>
+            <li>
                 <a (click)="detalle=false">Cuentas</a>
             </li>
         </ol>
     </div>
 </div>
-
-<!-- Cuerpo -->
 <div class="wrapper wrapper-content">
     <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 20px">Cliente:</label>
+                            <label class="control-label" style="margin-right: 80px">{{fullName}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 20px">Cuenta:</label>
+                            <label class="control-label" style="margin-right: 100px">{{Cuenta.numeroCuenta}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 20px">Saldo:</label>
+                            <label class="control-label" style="margin-right: 100px">{{simbolo}}{{Cuenta.saldoDisponible}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" style="margin-right: 20px">Moneda:</label>
+                            <label class="control-label" style="margin-right: 20px">{{Moneda}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <!-- <div class="ibox-content"> -->
+                    <div class="form-inline">
+                        <div class="form-group" style="margin-right: 20px">
+                            <button class="btn-xs btn-primary" [routerLink]="['/cliente/movimiento', cuentaId, personaId]">Movimientos</button>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn-xs btn-primary">Estado de Cuenta</button>
+                        </div>
+                    </div>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+<!-- </div> -->
+<!-- Cuerpo -->
+<!-- <div class="wrapper wrapper-content"> -->
+    <div class="row">
         <div class="col-lg-5">
             <div class="ibox float-e-margins">
                 <div class="ibox-content">
@@ -23,19 +69,19 @@
                         </div>
                         <div class="form-group">
                             <label class="control-label" style="margin-right: 47px">Producto:</label>
-                            <label class="control-label">{{Cuenta.segmento.subProducto.producto.nombre}}</label>
+                            <label class="control-label">{{producto}}</label>
                         </div>
                         <div class="form-group">
                             <label class="control-label" style="margin-right: 20px">Sub Producto:</label>
-                            <label class="control-label">{{Cuenta.segmento.subProducto.nombre}}</label>
+                            <label class="control-label">{{subProducto}}</label>
                         </div>
                         <div class="form-group">
                             <label class="control-label" style="margin-right: 42px">Segmento:</label>
-                            <label class="control-label">{{Cuenta.segmento.nombre}}</label>
+                            <label class="control-label">{{segmento}}</label>
                         </div>
                         <div class="form-group">
                             <label class="control-label" style="margin-right: 22px">N° de Cuenta:</label>
-                            <label class="control-label">{{Cuenta.numeroCuenta}}</label>
+                            <label class="control-label">{{numeroCuenta}}</label>
                         </div>
                         <div class="form-group">
                             <label class="control-label" style="margin-right: 66px">Estado:</label>
@@ -43,11 +89,11 @@
                         </div>
                         <div class="form-group">
                             <label class="control-label" style="margin-right: 24px">Días de mora:</label>
-                            <label class="control-label">{{Cuenta.diasAtraso}}</label>
+                            <label class="control-label">{{diasAtraso}}</label>
                         </div>
                         <div class="form-group">
                             <label class="control-label" style="margin-right: 20px">Fecha<br>formalización:</label>
-                            <label class="control-label">{{Cuenta.fechaAlta}}</label>
+                            <label class="control-label">{{fechaAlta}}</label>
                         </div>
                         <div class="form-group">
                             <label class="control-label" style="margin-right: 58px">Moneda:</label>
@@ -64,7 +110,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-lg-7">
             <div class="ibox float-e-margins">
                 <div class="ibox-content">
@@ -78,7 +123,7 @@
                     </div>
                     <div class="ibox-content">
                         <div class="form-group" style="text-align:center; color: green">
-                            <h1><strong>S/. 50,000.00</strong></h1>
+                            <h1><strong>{{simbolo}}{{saldoUtilizado}}</strong></h1>
                             <label>Deuda Total</label>
                         </div>
                         <br>
@@ -122,7 +167,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-lg-5">
             <div class="ibox float-e-margins">
                 <div class="ibox-content">
@@ -131,7 +175,7 @@
                             <h3>SALDOS</h3>
                         </div>
                         <div class="form-group">
-                            <button class="btn-xs btn-primary">Ver cuotas</button>
+                            <button class="btn-xs btn-primary">Exportar</button>
                         </div>
                     </div>
                     <div class="ibox-content">
@@ -169,7 +213,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-lg-7">
             <div class="ibox float-e-margins">
                 <div class="ibox-content">
@@ -177,9 +220,9 @@
                         <div class="form-group" style="margin-right: 411px">
                             <h3>GARANTIAS</h3>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <button class="btn-xs btn-primary">Ver cuotas</button>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="ibox-content">
                         <div class="row">
@@ -192,6 +235,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>

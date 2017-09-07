@@ -12,8 +12,10 @@ import {LoginComponent} from "./views/appviews/login.component";
 
 import {CargaMasivaDetalleComponent} from './views/carga-masiva/carga-masiva-detalle.component';
 import {SolicitudesComponent} from './views/solicitudes/solicitud.component';
-import {ClienteComponent} from './views/clientes/cliente.component';
+import {ClienteDetalleComponent} from './views/clientes/cliente-detalle.component';
 import { CuentaDetalleComponent } from './views/clientes/cuenta-detalle.component';
+import { BusquedaComponent } from './views/clientes/busqueda.component';
+import { MovimientoComponent } from './views/clientes/movimiento.component';
 
 import {BlankLayoutComponent} from "./components/common/layouts/blankLayout.component";
 import {BasicLayoutComponent} from "./components/common/layouts/basicLayout.component";
@@ -69,8 +71,10 @@ export const ROUTES:Routes = [
   {
     path: 'cliente', component: BasicLayoutComponent,
     children: [
-      {path: '',  component: ClienteComponent, canActivate: [BasicAuthGuard]},
-      {path: 'cuenta-detalle/:cuentaId',  component: CuentaDetalleComponent, canActivate: [BasicAuthGuard]}
+      {path: 'busqueda',  component: BusquedaComponent},
+      {path: 'cliente-detalle/:personaId',  component: ClienteDetalleComponent},
+      {path: 'cuenta-detalle/:cuentaId/:personaId',  component: CuentaDetalleComponent},
+      {path: 'movimiento/:cuentaId/:personaId',  component: MovimientoComponent}
     ]
   },
 

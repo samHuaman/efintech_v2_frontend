@@ -10,12 +10,16 @@ import { IboxtoolsModule } from '../../components/common/iboxtools/iboxtools.mod
 import { ClienteComponent } from './cliente.component';
 import { ClienteDetalleComponent } from './cliente-detalle.component';
 import { CuentaDetalleComponent } from './cuenta-detalle.component';
+import { BusquedaComponent } from './busqueda.component';
+import { MovimientoComponent } from './movimiento.component';
 
 @NgModule({
     declarations: [
         ClienteComponent,
         ClienteDetalleComponent,
-        CuentaDetalleComponent
+        CuentaDetalleComponent,
+        BusquedaComponent,
+        MovimientoComponent
     ],
     imports: [
         BrowserModule,
@@ -30,7 +34,9 @@ import { CuentaDetalleComponent } from './cuenta-detalle.component';
     exports: [
         ClienteComponent,
         ClienteDetalleComponent,
-        CuentaDetalleComponent
+        CuentaDetalleComponent,
+        BusquedaComponent,
+        MovimientoComponent
     ]
 })
 
