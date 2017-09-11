@@ -18,19 +18,19 @@
                     <div class="form-inline">
                         <div class="form-group">
                             <label class="control-label" style="margin-right: 20px">Cliente:</label>
-                            <label class="control-label" style="margin-right: 80px"></label>
+                            <label class="control-label" style="margin-right: 80px">{{fullName}}</label>
                         </div>
                         <div class="form-group">
                             <label class="control-label" style="margin-right: 20px">Cuenta:</label>
-                            <label class="control-label" style="margin-right: 100px"></label>
+                            <label class="control-label" style="margin-right: 100px">{{numeroCuenta}}</label>
                         </div>
                         <div class="form-group">
                             <label class="control-label" style="margin-right: 20px">Saldo:</label>
-                            <label class="control-label" style="margin-right: 100px"></label>
+                            <label class="control-label" style="margin-right: 100px">{{simbolo}}{{saldoDisponible}}</label>
                         </div>
                         <div class="form-group">
                             <label class="control-label" style="margin-right: 20px">Moneda:</label>
-                            <label class="control-label" style="margin-right: 20px"></label>
+                            <label class="control-label" style="margin-right: 20px">{{Moneda}}</label>
                         </div>
                     </div>
                 </div>
@@ -45,17 +45,12 @@
                     <h3>INGRESAR DATOS DE MOVIMIENTO</h3>
                     <div class="form-inline">
                         <div class="form-group">
-                            <label class="control-label" style="margin-right: 20px">Tipo de Movimiento:</label>
-                            <select2>
-                            </select2>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label" style="margin-right: 20px">Fecha:</label>
-                            <input type="date">
+                            <label style="margin-right: 20px">Tipo de Movimiento:</label>
+                            <select2 [data]="Transacciones" [options]="TransaccionOptions"></select2>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
-
 </div>

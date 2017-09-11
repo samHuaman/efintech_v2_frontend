@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { MyDataTablesModule } from '../../components/common/datatables/datatables.module';
 import { MyDropdownModule } from '../../components/common/dropdowns/dropdowns.module';
 import { IboxtoolsModule } from '../../components/common/iboxtools/iboxtools.module';
+import { MyDatePickerModule } from 'mydatepicker';
 
 import { ClienteComponent } from './cliente.component';
 import { ClienteDetalleComponent } from './cliente-detalle.component';
@@ -28,7 +29,8 @@ import { MovimientoComponent } from './movimiento.component';
         RouterModule,
         MyDataTablesModule,
         MyDropdownModule,
-        IboxtoolsModule
+        IboxtoolsModule,
+        MyDatePickerModule
         
     ],
     exports: [

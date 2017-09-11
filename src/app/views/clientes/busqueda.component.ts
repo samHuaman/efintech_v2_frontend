@@ -60,7 +60,6 @@ export class BusquedaComponent implements OnInit, OnChanges, AfterViewChecked{
             dropdownAutoWidth: false,
             width: '100%',
             allowClear: false,
-            multiple: true,
             placeholder: {
                 id: -1,
                 text: 'Tipo Documento'

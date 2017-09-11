@@ -20,6 +20,9 @@ export class CuentaDetalleComponent implements OnInit{
     public TarifarioURL:string;
     public Tarifario: any ={};
     public segmento_id:any;
+    public iCompensatorio:any;
+    public iMoratorio:any;
+    public sDesgravamen:any;
 
     //Cuenta
     public CuentaURL: string;
@@ -92,7 +95,9 @@ export class CuentaDetalleComponent implements OnInit{
                 this.saldoUtilizado = this.Cuenta.saldoUtilizado;
                 this.productoMonedas = this.Cuenta.segmento.subProducto.producto.productoMonedas;
                 this.segmento_id = this.Cuenta.segmento.segmentoId;
-                this.getTarifario(this.segmento_id);
+                this.getInteresCompensatorio(this.segmento_id);
+                this.getInteresMoratorio(this.segmento_id);
+                this.getSeguroDesgravamen(this.segmento_id);
                 if(this.Cuenta.activo = 'true'){
                     this.cuentaEstado = 'Activa';
                 }else{
@@ -114,12 +119,47 @@ export class CuentaDetalleComponent implements OnInit{
         }
     }
 
-    getTarifario(segmento_id:any){
-        this.TarifarioURL = 'http://localhost:8080/tarifarios/getTarifarioBySegmentoId?segmento_id=' + segmento_id;
+    getInteresCompensatorio(segmento_id:any){
+        this.TarifarioURL = 'http://localhost:8080/tarifarios/getTarifarioBySegmentoId?segmento_id=' + segmento_id + '&alias=INTERES_COMPENSATORIO';
         if(this.segmento_id != null){
             this.httpRequestService.getWithCredentials(this.TarifarioURL)
             .subscribe(data=>{
-                //this.Tarifario = JSON.parse(data._body);
+                 if(data._body.toString().length>0){
+                    this.Tarifario = JSON.parse(data._body);
+                    this.iCompensatorio = (Number(this.Tarifario.tasa) * 100).toString() + ' %';
+                }else{
+                    this.iCompensatorio = '- -';
+                }
+            })
+        }
+    }
+
+    getInteresMoratorio(segmento_id:any){
+        this.TarifarioURL = 'http://localhost:8080/tarifarios/getTarifarioBySegmentoId?segmento_id=' + segmento_id + '&alias=INTERES_MORATORIO';
+        if(this.segmento_id != null){
+            this.httpRequestService.getWithCredentials(this.TarifarioURL)
+            .subscribe(data=>{
+                 if(data._body.toString().length>0){
+                    this.Tarifario = JSON.parse(data._body);
+                    this.iMoratorio = (Number(this.Tarifario.tasa) * 100).toString() + ' %';
+                }else{
+                    this.iMoratorio = '- -';
+                }
+            })
+        }
+    }
+
+    getSeguroDesgravamen(segmento_id:any){
+        this.TarifarioURL = 'http://localhost:8080/tarifarios/getTarifarioBySegmentoId?segmento_id=' + segmento_id + '&alias=SEGURO_DESGRAVAMEN';
+        if(this.segmento_id != null){
+            this.httpRequestService.getWithCredentials(this.TarifarioURL)
+            .subscribe(data=>{
+                if(data._body.toString().length>0){
+                    this.Tarifario = JSON.parse(data._body);
+                    this.sDesgravamen = (Number(this.Tarifario.tasa) * 100).toString() + ' %';
+                }else{
+                    this.sDesgravamen = '- -';
+                }
             })
         }
     }
@@ -136,7 +176,6 @@ export class CuentaDetalleComponent implements OnInit{
             this.httpRequestService.getWithCredentials(this.PersonaURL)
                 .subscribe(data => {
                     this.Persona = JSON.parse(data._body);
-                    console.log('gol',this.Persona);
                     this.fullName = this.Persona.primerNombre + ' ' + this.Persona.segundoNombre + ' ' + this.Persona.apellidoPaterno + ' ' + this.Persona.apellidoMaterno;
                 })
         }
